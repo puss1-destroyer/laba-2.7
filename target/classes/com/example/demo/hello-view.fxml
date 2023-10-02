@@ -10,9 +10,9 @@
       <TextField fx:id="start" layoutX="7.0" layoutY="14.0" prefHeight="25.0" prefWidth="201.0" promptText="Введите начальный угол сектора " text="0" />
       <TextField fx:id="end" layoutX="385.0" layoutY="14.0" prefHeight="25.0" prefWidth="201.0" promptText="Введите конечный угол сектора" text="90" />
       <Button fx:id="execute" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" text="Нарисовать сектор" textAlignment="CENTER" textFill="#141414" />
-      <AnchorPane layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: fafafa;">
+      <AnchorPane layoutX="111.0" layoutY="64.0" prefHeight="253.0" prefWidth="375.0" style="-fx-background-color: fafafa;">
          <children>
-            <Canvas fx:id="mainCanvas" height="203.0" layoutY="-3.0" width="204.0" />
+            <Canvas fx:id="mainCanvas" height="203.0" layoutX="86.0" layoutY="25.0" width="204.0" />
          </children>
       </AnchorPane>
    </children>

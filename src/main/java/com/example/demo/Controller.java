@@ -83,15 +83,22 @@ public class Controller implements Initializable {
     private boolean isInsideSegment(int x, int y, int center_x, int center_y, int radius, double startAngle, double endAngle) {
         int relpointx = x - center_x;
         int relpointy = y - center_y;
-        double angle = Math.toDegrees(Math.atan2(relpointy, relpointx));
+        double angle = Math.toDegrees(Math.atan2(-relpointy, relpointx));
         if (angle < 0) {
             angle += 360;
         }
-        if (angle >= startAngle && angle <= endAngle) {
+        if (endAngle > 360) {
+            endAngle -= 360;
+            if (angle >= startAngle || angle <= endAngle) {
+                double distanceFromCenter = Math.sqrt(Math.pow(relpointx, 2) + Math.pow(relpointy, 2));
+                return distanceFromCenter <= radius;
+            }
+        } else if (angle >= startAngle && angle <= endAngle) {
             double distanceFromCenter = Math.sqrt(Math.pow(relpointx, 2) + Math.pow(relpointy, 2));
             return distanceFromCenter <= radius;
         }
         return false;
     }
+
 
 }
